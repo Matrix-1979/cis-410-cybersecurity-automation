@@ -5,7 +5,7 @@
 --**Semester:** Spring 2026
 
 ##About This Course
-This repository is my CIS 410: CyberSecurity Automation portfolio. In this course I will learn about secure software development, CI/CD pipelines, containerization, infrastructure as code, and cloud deployment.
+This repository is my CIS 410: CyberSecurity Automation portfolio. In this course I will learn about secure software development, CI/CD pipelhttps://github.com/Matrix-1979/cis-410-cybersecurity-automation.githttps://github.com/Matrix-1979/cis-410-cybersecurity-automation.gitines, containerization, infrastructure as code, and cloud deployment.
 
 ## What I hope to Learn
 How to automate security tasks using Python and scripts
