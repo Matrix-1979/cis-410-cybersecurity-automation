@@ -27,6 +27,6 @@ provider "google" {
 module "networking" {
   source = "./modules/networking"
 
-  project_id   = var.project_id
-  my_ip_cidr   = var.my_ip_cidr
+  project_id = var.project_id
+  my_ip_cidr = var.my_ip_cidr
 }

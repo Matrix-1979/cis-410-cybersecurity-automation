@@ -1,31 +1,34 @@
-# Week 7 Activity 2 — Networking Module Outputs
-# Exposes VPC, subnet, and firewall rule IDs for the root module
-
 output "vpc_id" {
-  description = "VPC network ID (self_link)"
   value       = google_compute_network.vpc.id
+  description = "The ID of the VPC network"
 }
 
 output "vpc_name" {
-  description = "VPC network name"
   value       = google_compute_network.vpc.name
+  description = "The name of the VPC network"
 }
 
 output "public_subnet_id" {
-  description = "Public subnet ID (self_link)"
   value       = google_compute_subnetwork.public_subnet.id
+  description = "The ID of the public subnet"
 }
 
 output "public_subnet_name" {
-  description = "Public subnet name"
   value       = google_compute_subnetwork.public_subnet.name
+  description = "The name of the public subnet"
 }
 
-output "firewall_rules" {
-  description = "Firewall rule IDs"
-  value = {
-    ssh   = google_compute_firewall.allow_ssh.id
-    http  = google_compute_firewall.allow_http.id
-    https = google_compute_firewall.allow_https.id
-  }
+output "firewall_ssh_id" {
+  value       = google_compute_firewall.allow_ssh.id
+  description = "The ID of the SSH firewall rule"
+}
+
+output "firewall_http_id" {
+  value       = google_compute_firewall.allow_http.id
+  description = "The ID of the HTTP firewall rule"
+}
+
+output "firewall_https_id" {
+  value       = google_compute_firewall.allow_https.id
+  description = "The ID of the HTTPS firewall rule"
 }
