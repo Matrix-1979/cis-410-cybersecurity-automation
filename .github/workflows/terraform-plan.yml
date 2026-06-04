@@ -13,15 +13,13 @@ jobs:
     name: Plan VPC Infrastructure
 
     permissions:
-      id-token: write   # REQUIRED: allows GitHub to request an OIDC token
+      id-token: write
       contents: read
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # GitHub sends a JWT to GCP. GCP validates it using the pool you created.
-      # GCP returns a temporary token. Nothing is stored.
       - name: Authenticate to GCP via OIDC
         uses: google-github-actions/auth@v2
         with:
