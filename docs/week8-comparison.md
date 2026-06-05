@@ -35,7 +35,18 @@ Based on my experience, Cloud Run provided a simpler deployment process, automat
 
 
 
+ Week 8 Comparison: On-Premise Docker vs. Cloud Run
 
+| Dimension | On-Premise Docker (Wks 3–5) | Cloud Run (Week 8) |
+|---|---|---|
+| Infrastructure setup | 3 VMs created, Docker installed on each | No VM setup. Cloud Run managed the server infrastructure automatically. |
+| Deployment command | SSH → docker build → docker run | GitHub Actions used OIDC, built the image, pushed to Artifact Registry, then ran `gcloud run deploy`. |
+| TLS / HTTPS | Not configured | HTTPS was provided automatically with the `.run.app` URL. |
+| Scaling approach | Manual — redeploy or add VMs | Automatic scaling based on traffic, including scale to zero when idle. |
+| Port management | Ports 5000/5001/5002 per environment | No manual port setup. Cloud Run handled routing through HTTPS. |
+| Cost when idle | VM running 24/7 regardless of traffic | Cloud Run can scale to zero, so it does not run constantly when idle. |
+| Rollback | Re-deploy previous image manually | Can redeploy a previous container image or revision in Cloud Run. |
+| Secrets management | GitHub Secrets → env vars in workflow | GitHub Actions used OIDC with workload identity instead of long-lived SSH keys. |
 
 
 
