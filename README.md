@@ -1,5 +1,0 @@
-Runner VM: langombo-runner
-
-Runner IP: 192.168.1.155
-
-Pipeline status: [![Hello Pipeline](https://github.com/Matrix-1979/cis-410-cybersecurity-automation/actions/workflows/hello-pipeline.yml/badge.svg)](https://github.com/Matrix-1979/cis-410-cybersecurity-automation/actions/workflows/hello-pipeline.yml)
