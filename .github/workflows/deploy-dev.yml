@@ -76,7 +76,7 @@ jobs:
 
             app/ Dockerfile .dockerignore docker-compose.yml \
 
-            ${{ secrets.DEV_USER }}@${{ secrets.DEV_HOST }}:/opt/app/
+            "${{ secrets.DEV_USER }}@${{ secrets.DEV_HOST }}:/opt/app/"
 
 
           rm /tmp/deploy_key
@@ -111,7 +111,7 @@ jobs:
 
           ssh -i /tmp/deploy_key -o StrictHostKeyChecking=no \
 
-            ${{ secrets.DEV_USER }}@${{ secrets.DEV_HOST }} << 'EOF'
+            ${{ secrets.DEV_USER }}@${{ secrets.DEV_HOST }} 
 
           set -e
 
