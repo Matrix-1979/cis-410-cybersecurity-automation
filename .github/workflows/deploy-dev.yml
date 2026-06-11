@@ -77,8 +77,6 @@ jobs:
             app/ Dockerfile .dockerignore docker-compose.yml \
 
             "${{ secrets.DEV_USER }}@${{ secrets.DEV_HOST }}:/opt/app/"
-
-
           rm /tmp/deploy_key
 
 
