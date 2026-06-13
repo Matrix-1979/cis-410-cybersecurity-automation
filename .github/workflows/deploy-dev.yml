@@ -67,7 +67,7 @@ jobs:
 
         run: |
 
-          echo "${{ secrets.DEV_SSH_KEY }}" > /tmp/deploy_key
+         cp ~/.ssh/deploy_key /tmp/deploy_key
 
           chmod 600 /tmp/deploy_key
 
@@ -76,7 +76,7 @@ jobs:
 
             app/ Dockerfile .dockerignore docker-compose.yml \
 
-            "${{ secrets.DEV_USER }}@${{ secrets.DEV_HOST }}::/home/student/app/"
+            "${{ secrets.DEV_USER }}@${{ secrets.DEV_HOST }}:/home/student/app/"
 
 
       # ── Step 3: Build the image and start the container ────────────────────
