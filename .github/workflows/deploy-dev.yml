@@ -76,8 +76,7 @@ jobs:
 
             app/ Dockerfile .dockerignore docker-compose.yml \
 
-            "${{ secrets.DEV_USER }}@${{ secrets.DEV_HOST }}:/opt/app/"
-          rm /tmp/deploy_key
+            "${{ secrets.DEV_USER }}@${{ secrets.DEV_HOST }}::/home/student/app/"
 
 
       # ── Step 3: Build the image and start the container ────────────────────
