@@ -35,7 +35,7 @@ jobs:
       # commit and branch triggered this deployment.
       - name: Deploy Flask container
         run: |
-          echo "${{ secrets.DEV_SSH_KEY }}" > /tmp/deploy_key
+          cp ~/.ssh/deploy_key /tmp/deploy_key
           chmod 600 /tmp/deploy_key
 
           ssh -i /tmp/deploy_key -o StrictHostKeyChecking=no \
