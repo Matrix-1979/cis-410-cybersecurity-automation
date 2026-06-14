@@ -18,18 +18,12 @@ jobs:
       - name: Copy app files to Dev VM
         run: |
 
-         cp ~/.ssh/deploy_key /tmp/deploy_key
-
+          cp ~/.ssh/deploy_key /tmp/deploy_key
           chmod 600 /tmp/deploy_key
 
           scp -i /tmp/deploy_key -o StrictHostKeyChecking=no -r app Dockerfile .dockerignore docker-compose.yml ${{ secrets.DEV_USER }}@${{ secrets.DEV_HOST }}:/opt/app/
 
-          scp -i /tmp/deploy_key -o StrictHostKeyChecking=no -r \
-
-            app/ Dockerfile .dockerignore docker-compose.yml \
-
-            "${{ secrets.DEV_USER }}@${{ secrets.DEV_HOST }}:/home/student/app/"
-
+          rm /tmp/deploy_key
       # Step 3: Build the image and start the container
       # Uses 'sudo docker' instead of plain 'docker' because non-interactive
       # SSH sessions may not activate the docker group membership set during
